@@ -1,6 +1,6 @@
 # Express Navbar
 
-once you've downloaded these files, open your terminal and cd to its folder
+Once you've downloaded these files, open your terminal and cd to its folder
 
 Enter npm init -y
 
