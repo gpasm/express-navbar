@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 const path = require('path');
 
 // add any necessary code you'd want to!
+app.use(express.static(path.join(__dirname,'public')));
 
 //root
 app.get('/', (req, res) => {
