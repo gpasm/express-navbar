@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My Homework Assignments</title>
+    <style>
+        /* nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #eee;
+      padding: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 1rem;
+    } */
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+            /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+            /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+            clip-path: circle(25px at calc(100% - 45px) 45px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        #active:checked~.wrapper {
+            clip-path: circle(75%);
+        }
+
+        .menu-btn {
+            position: absolute;
+            z-index: 2;
+            right: 20px;
+            /* left: 20px; */
+            top: 20px;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            background: linear-gradient(-135deg, #c850c0, #4158d0);
+            /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+            transition: all 0.3s ease-in-out;
+        }
+
+        #active:checked~.menu-btn {
+            background: #fff;
+            color: #4158d0;
+        }
+
+        #active:checked~.menu-btn i:before {
+            content: "\f00d";
+        }
+
+        .wrapper ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            text-align: center;
+        }
+
+        .wrapper ul li {
+            margin: 15px 0;
+        }
+
+        .wrapper ul li a {
+            color: none;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 500;
+            padding: 5px 30px;
+            color: #fff;
+            position: relative;
+            line-height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .wrapper ul li a:after {
+            position: absolute;
+            content: "";
+            background: #fff;
+            width: 100%;
+            height: 50px;
+            left: 0;
+            border-radius: 50px;
+            transform: scaleY(0);
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+
+        .wrapper ul li a:hover:after {
+            transform: scaleY(1);
+        }
+
+        .wrapper ul li a:hover {
+            color: #4158d0;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            text-align: center;
+            width: 100%;
+            color: #202020;
+        }
+
+        .content .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .content p {
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        /* main styling */
+        html {
+            background-color: #580d0d;
+        }
+
+        .login-container {
+            background-color: #f9eec2;
+            border: 3px solid #793224;
+            border-radius: 10px;
+            width: 600px;
+            padding: 10px 20px 20px 20px;
+
+            box-shadow: 60px 30px rgb(191, 108, 78);
+            display: flex;
+            flex-direction: column;
+
+        }
+
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            color: #2c4747;
+            font-size: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+            background-size: 40px 40px;
+            /* background-image:
+                linear-gradient(to right, grey 1px, transparent 1px),
+                linear-gradient(to bottom, grey 1px, transparent 1px); */
+            background-image:
+            linear-gradient(135deg, #ebd7ba 35%, transparent 25%),
+            /* Comment: Creates a diagonal gradient for the zig-zag pattern */
+            linear-gradient(225deg, #ebd7ba 35%, transparent 25%),
+            /* Comment: Creates another diagonal gradient for the zig-zag pattern */
+            linear-gradient(315deg, #ebd7ba 35%, transparent 25%),
+            /* Comment: Creates another diagonal gradient for the zig-zag pattern */
+            linear-gradient(45deg, #ebd7ba 35%, transparent 25%);
+            /* Comment: Creates another diagonal gradient for the zig-zag pattern */
+            background-position: -30px 0, -30px 0, 0 0, 0 0;
+            /* Comment: Positions the background gradients */
+            background-size: 60px 60px;
+            /* Comment: Sets the size of each diamond in the zig-zag pattern */
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href="/climate-crisis">Climate Crisis</a></li>
+                <li><a href="/typesetting">Typesetting</a></li>
+                <li><a href="/four-algorithms">Four Algorithms</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="login-container">
+        <h1>Welcome!</h1>
+        <p>Click the little circle in the corner.</p>
+        <p>(I borrowed the circle from JV Codes. Thank you JV Codes)</p>
+    </div>
+</body>
+
+</html>
