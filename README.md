@@ -8,6 +8,6 @@ Enter npm install express
 
 Enter node server.js
 
-Open up the website link!
+Open up the website!
 
 (apologies, this was rushed)
